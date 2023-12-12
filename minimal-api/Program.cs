@@ -22,4 +22,11 @@ app.UseHttpsRedirection();
 app.MapGet("/weatherforecast", async (GetWeather service) => await service.GetWeatherFor("Generic").ConfigureAwait(false));
 app.MapPost("/weatherforecast", async (GetWeather service, WeatherForecastRequest request) => await service.GetWeatherFor(request.City).ConfigureAwait(false));
 
+app.MapPost("/weatherforecast2", async (GetWeather service, HttpRequest request) =>
+{
+    var req = await JsonSerializer.DeserializeAsync(request.Body, SourceGenerationContext.Default.WeatherForecastRequest).ConfigureAwait(false);
+    var result = await service.GetWeatherFor(req.City).ConfigureAwait(false);
+    return JsonContent.Create(JsonSerializer.Serialize(result, SourceGenerationContext.Default.WeatherForecastResults));
+});
+
 app.Run();
