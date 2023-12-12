@@ -5,11 +5,12 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<InvariantGlobalization>true</InvariantGlobalization>
-		<RootNamespace>minimal_api</RootNamespace>
+		<RootNamespace>WalkingDisaster.SourceGenExamples.MinimalApi</RootNamespace>
 		<UserSecretsId>08de086d-6fa8-41b4-8fba-d052141ee1ca</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 		<RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
 		<EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
+		<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="[1.19.6-Preview.1, 1.19.6]" />
